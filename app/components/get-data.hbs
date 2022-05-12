@@ -1,0 +1,16 @@
+
+<div class=" main border border-secondary  m-3 p-2">
+   
+    <form>
+                          
+                <label for="value">Value <span class="text-danger" >*</span></label>
+                {{input type ="text" value= @value }}
+        
+                <label for="name">Name</label>
+                {{input type ="text"  value= @name }}
+
+            
+
+    </form>
+        <button  class="btn bg-dark text-white  m-3 rounded" {{on 'click' @save}} type="button"><h3 class="align-item-center">+</h3></button>  
+</div>
