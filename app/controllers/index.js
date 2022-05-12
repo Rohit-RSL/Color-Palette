@@ -13,17 +13,13 @@ export default class IndexController extends Controller {
     var value = this.value;
     var name = this.name;
     var isHere = value != '' || name != '';
-    this.colorData.push({
-      value: value,
-      name: name,
-      isHere: isHere
-    });
+    this.colorData = [...this.colorData,{ value: value, name: name, isHere: isHere }];
     console.log(this.colorData);
   };
-  
+
   @action
-  remove() {
-    this.isRemoving = true;
-    console.log('im in remove ');
-  }
+  remove(value) {
+      this.colorData = this.colorData.filter((color)=>color.value != value )
+        console.log(value);
+}
 }

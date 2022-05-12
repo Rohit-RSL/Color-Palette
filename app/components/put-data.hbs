@@ -1,12 +1,16 @@
-<div class="d-flex">
-    <div class="col-x2-12">
-            <div class = "border border-primary">
-                <p>Name</p>
-                <p>Value</p>
-            </div>
-
-     
-            {{!-- <button  class="btn bg-dark text-white  m-3 rounded" type="button" {{on 'click' @remove}} ><h3 class="align-item-center">+</h3></button> --}}
-       
+<div class="row">
+    <div class="d-flex">
+        {{#each @colorData as |color|}}
+            {{#if color.isHere}}
+                
+                <div class = "border border-primary m-2 p-2 border-rounded" style="background-color:{{color.value}};">
+                        <h3>{{color.value}}</h3>
+                        <p>{{color.name}}</p> 
+                <button  class="btn bg-dark text-white  m-3 rounded" type="button" {{on 'click' (fn @remove color.value)}} ><h3 class="align-item-center">-</h3></button>
+                </div>
+            {{/if}}
+        {{/each}}
+    
+        
     </div>
 </div>
